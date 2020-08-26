@@ -1,0 +1,29 @@
+<html dir="ltr" lang="zh" i18n-processed="">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="google" value="notranslate">
+  <title id="title">D:\movie\www\ 的索引</title>
+
+</head>
+
+<body>
+  <script src="node_modules/art-template/lib/template-web.js"></script>
+ 
+    var ret = template('tpl', {
+      name: 'nick',
+      age: 18,
+      province: '四川'
+    })
+    console.log(ret);
+    
+  </script>
+  <p>大家好 ，我叫:{{name}},</p>
+  <p> 今年{{age}}岁</p>
+  <p> 我来自{{province}}</p>
+  <h1>
+    我喜欢：{{each hobo}}{{$value}}{{/each}}
+  </h1>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Documentl</title>
+    <!-- 
+            当浏览器收到html响应内容后，就要从上到下开始解析，
+            在浏览器中，如果发现：
+                link，script，image，iframe，video，audio
+                等带有 link或href属性的时候，浏览器会对这些资源发起新的请求
+                本次访问地址为：http://localhost:3000/node_modules/bootstrap/dist/css/bootstrap.css
+         -->
+    <!-- 注意：在服务器端中，文件中的路径就不要写相对路径了，因为这个时候所有的资源都是通过url标识来获取的
+        我们服务器开放了/public/目录，所以这里的路径都写成/public/xxx     
+        / 在这里表示项目根路径
+        浏览器在发请求会是   ：http://localhost:3000拼上
+        不要想文件路径了 ，把所有路径想成url
+                -->
+    <link rel="stylesheet" href="/public/lib/node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="/public/css/main.css">
+    <link rel="stylesheet" href="/public/js/a.js">
+
+</head>
+
+<body>
+    <div class="header container">
+        <div class="page-header">
+            <h1>Example page header <small>Subtext for header</small></h1>
+            <a href="/post" class="btn btn-success">发表留言</a>
+        </div>
+        <div class="comments container">
+            <ul class="list-group">
+                {{each comments}}
+                <li class="list-group-item">{{$value.name}}said: {{$value.message}} at {{$value.dateTime}}</li>
+                 {{/each}}
+            </ul>
+        </div>
+
+        </script>
+    </div>
+</body>
+
+</html>
